@@ -1,12 +1,12 @@
 Summary:	Digital circuit simulator
 Summary(pl):	Symulator uk³adów cyfrowych
 Name:		klogic
-Version:	1.61
+Version:	1.62
 Release:	1
 License:	GPL
 Group:		X11/Applications/Science
 Source0:	http://www.a-rostin.de/klogic/Version/%{name}-%{version}.tar.gz
-# Source0-md5:	091e8db0de45c98406e651c9dfe7e5ef
+# Source0-md5:	bfd6e196850a8883b9c12553d9c7a910
 Source1:	%{name}.desktop
 URL:		http://www.a-rostin.de/klogic/
 BuildRequires:	kdelibs-devel
