@@ -1,17 +1,20 @@
 Summary:	Digital circuit simulator
 Summary(pl):	Symulator uk³adów cyfrowych
 Name:		klogic
-Version:	1.5
-Release:	0.1
+Version:	1.6
+Release:	1
 License:	GPL
-Group:		X11/Applications
+Group:		X11/Applications/Science
 Source0:	http://www.a-rostin.de/klogic/Version/%{name}-%{version}.tar.gz
-# Source0-md5:	f2381be30b539049f731bb39640f5d9c
+# Source0-md5:	828809506b548d92207042b9fe8ea89e
+Source1:	%{name}.desktop
 URL:		http://www.a-rostin.de/klogic/
 BuildRequires:	kdelibs-devel
+BuildRequires:	artsc-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define         _htmldir        /usr/share/doc/kde/HTML
+%define		_noautocompressdoc *.circuit
 
 %description
 KLogic is an application for building and simulating digital circuits.
@@ -44,6 +47,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+	
+mv $RPM_BUILD_ROOT/%{_pixmapsdir}/klogic/* $RPM_BUILD_ROOT/%{_pixmapsdir}/
+install -d $RPM_BUILD_ROOT/%{_desktopdir}/Edutainment
+install %{SOURCE1} $RPM_BUILD_ROOT/%{_desktopdir}/Edutainment/KLogic.desktop
 
 %find_lang %{name} --with-kde
 
@@ -54,6 +61,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc examples/*.circuit
 %attr(755,root,root) %{_bindir}/*
-##%{_applnkdir}/Applications/*
+%{_desktopdir}/Edutainment/*
 %{_datadir}/apps/klogic
-%{_pixmapsdir}/klogic
+%{_pixmapsdir}/klogic*.xpm
