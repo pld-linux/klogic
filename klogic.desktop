@@ -1,0 +1,11 @@
+[Desktop Entry]
+Comment=Digital circuit simulator
+Exec=klogic
+Icon=klogic
+Name=KLogic
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=
