@@ -1,12 +1,12 @@
 Summary:	Digital circuit simulator
 Summary(pl):	Symulator uk³adów cyfrowych
 Name:		klogic
-Version:	1.6
+Version:	1.61
 Release:	1
 License:	GPL
 Group:		X11/Applications/Science
 Source0:	http://www.a-rostin.de/klogic/Version/%{name}-%{version}.tar.gz
-# Source0-md5:	828809506b548d92207042b9fe8ea89e
+# Source0-md5:	091e8db0de45c98406e651c9dfe7e5ef
 Source1:	%{name}.desktop
 URL:		http://www.a-rostin.de/klogic/
 BuildRequires:	kdelibs-devel
@@ -24,13 +24,16 @@ build more complex, more structured and reuseable circuits, sub
 circuits can be used.
 
 %description -l pl
-KLogic jest programem przeznaczonym do budowy o symulacji uk³adów
-cyfrowych.
+KLogic jest programem przeznaczonym do budowy i symulacji uk³adów
+cyfrowych. Pozwala na tworzenie uk³adów zawieraj±cych elementy takie
+jak bramki AND, OR, XOR i przerzutniki RS i JK. Bardziej rozbudowane 
+uk³ady mog± zostaæ podzielone na poduk³ady.
 
 %prep
 %setup -q
 
 %build
+cp -f /usr/share/automake/config.sub admin
 kde_appsdir="%{_applnkdir}"; export kde_appsdir
 kde_htmldir="%{_htmldir}"; export kde_htmldir
 kde_icondir="%{_pixmapsdir}"; export kde_icondir
