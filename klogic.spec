@@ -9,8 +9,8 @@ Source0:	http://www.a-rostin.de/klogic/Version/%{name}-%{version}.tar.gz
 # Source0-md5:	bfd6e196850a8883b9c12553d9c7a910
 Source1:	%{name}.desktop
 URL:		http://www.a-rostin.de/klogic/
-BuildRequires:	kdelibs-devel
 BuildRequires:	artsc-devel
+BuildRequires:	kdelibs-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define         _htmldir        /usr/share/doc/kde/HTML
@@ -26,7 +26,7 @@ circuits can be used.
 %description -l pl
 KLogic jest programem przeznaczonym do budowy i symulacji uk³adów
 cyfrowych. Pozwala na tworzenie uk³adów zawieraj±cych elementy takie
-jak bramki AND, OR, XOR i przerzutniki RS i JK. Bardziej rozbudowane 
+jak bramki AND, OR, XOR i przerzutniki RS i JK. Bardziej rozbudowane
 uk³ady mog± zostaæ podzielone na poduk³ady.
 
 %prep
@@ -50,7 +50,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-	
+
 mv $RPM_BUILD_ROOT/%{_pixmapsdir}/klogic/* $RPM_BUILD_ROOT/%{_pixmapsdir}/
 install -d $RPM_BUILD_ROOT/%{_desktopdir}/Edutainment
 install %{SOURCE1} $RPM_BUILD_ROOT/%{_desktopdir}/Edutainment/KLogic.desktop
