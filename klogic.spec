@@ -1,19 +1,18 @@
 Summary:	Digital circuit simulator
 Summary(pl):	Symulator uk³adów cyfrowych
 Name:		klogic
-Version:	1.62
-Release:	1
+Version:	1.63
+Release:	0.1
 License:	GPL
 Group:		X11/Applications/Science
 Source0:	http://www.a-rostin.de/klogic/Version/%{name}-%{version}.tar.gz
-# Source0-md5:	bfd6e196850a8883b9c12553d9c7a910
+# Source0-md5:	83b6b6eb20046bbbb6a9860d28132d16
 Source1:	%{name}.desktop
 URL:		http://www.a-rostin.de/klogic/
 BuildRequires:	artsc-devel
 BuildRequires:	kdelibs-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define         _htmldir        /usr/share/doc/kde/HTML
 %define		_noautocompressdoc *.circuit
 
 %description
@@ -34,8 +33,8 @@ uk³ady mog± zostaæ podzielone na poduk³ady.
 
 %build
 cp -f /usr/share/automake/config.sub admin
-kde_appsdir="%{_applnkdir}"; export kde_appsdir
-kde_htmldir="%{_htmldir}"; export kde_htmldir
+kde_appsdir="%{_desktopdir}/kde"; export kde_appsdir
+kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 kde_icondir="%{_pixmapsdir}"; export kde_icondir
 
 %configure \
