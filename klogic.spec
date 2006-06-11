@@ -10,7 +10,9 @@ Source0:	http://www.a-rostin.de/klogic/Version/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 URL:		http://www.a-rostin.de/klogic/
 BuildRequires:	artsc-devel
+BuildRequires:	automake
 BuildRequires:	kdelibs-devel
+BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_noautocompressdoc *.circuit
@@ -33,7 +35,6 @@ uk³ady mog± zostaæ podzielone na poduk³ady.
 
 %build
 cp -f /usr/share/automake/config.sub admin
-kde_appsdir="%{_desktopdir}/kde"; export kde_appsdir
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 kde_icondir="%{_pixmapsdir}"; export kde_icondir
 
@@ -50,9 +51,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-mv $RPM_BUILD_ROOT/%{_pixmapsdir}/klogic/* $RPM_BUILD_ROOT/%{_pixmapsdir}/
-install -d $RPM_BUILD_ROOT/%{_desktopdir}/Edutainment
-install %{SOURCE1} $RPM_BUILD_ROOT/%{_desktopdir}/Edutainment/KLogic.desktop
+mv $RPM_BUILD_ROOT%{_pixmapsdir}/klogic/* $RPM_BUILD_ROOT%{_pixmapsdir}
+install -d $RPM_BUILD_ROOT%{_desktopdir}/kde
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/kde/KLogic.desktop
 
 %find_lang %{name} --with-kde
 
@@ -63,6 +64,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc examples/*.circuit
 %attr(755,root,root) %{_bindir}/*
-%{_desktopdir}/Edutainment/*
+%{_desktopdir}/kde/*.desktop
 %{_datadir}/apps/klogic
 %{_pixmapsdir}/klogic*.xpm
