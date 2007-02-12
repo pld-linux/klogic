@@ -1,5 +1,5 @@
 Summary:	Digital circuit simulator
-Summary(pl):	Symulator uk≥adÛw cyfrowych
+Summary(pl.UTF-8):   Symulator uk≈Çad√≥w cyfrowych
 Name:		klogic
 Version:	1.63
 Release:	0.1
@@ -24,11 +24,11 @@ components like AND, OR, XOR and flipflops like RS and JK. In order to
 build more complex, more structured and reuseable circuits, sub
 circuits can be used.
 
-%description -l pl
-KLogic jest programem przeznaczonym do budowy i symulacji uk≥adÛw
-cyfrowych. Pozwala na tworzenie uk≥adÛw zawieraj±cych elementy takie
+%description -l pl.UTF-8
+KLogic jest programem przeznaczonym do budowy i symulacji uk≈Çad√≥w
+cyfrowych. Pozwala na tworzenie uk≈Çad√≥w zawierajƒÖcych elementy takie
 jak bramki AND, OR, XOR i przerzutniki RS i JK. Bardziej rozbudowane
-uk≥ady mog± zostaÊ podzielone na poduk≥ady.
+uk≈Çady mogƒÖ zostaƒá podzielone na poduk≈Çady.
 
 %prep
 %setup -q
