@@ -1,5 +1,5 @@
 Summary:	Digital circuit simulator
-Summary(pl.UTF-8):   Symulator układów cyfrowych
+Summary(pl.UTF-8):	Symulator układów cyfrowych
 Name:		klogic
 Version:	1.63
 Release:	0.1
